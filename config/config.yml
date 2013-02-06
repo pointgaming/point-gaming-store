@@ -1,0 +1,16 @@
+defaults: &DEFAULTS
+  login_url: http://localhost:3000/users/sign_in
+  logout_url: http://localhost:3000/users/sign_out
+  signup_url: http://localhost:3000/users/sign_up
+
+development:
+  <<: *DEFAULTS
+
+test:
+  <<: *DEFAULTS
+
+production:
+  <<: *DEFAULTS
+  login_url: http://dev.pointgaming.net/users/sign_in
+  logout_url: http://dev.pointgaming.net/users/sign_out
+  signup_url: http://dev.pointgaming.net/users/sign_up

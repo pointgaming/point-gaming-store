@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'pg'
 
+gem 'redis-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,3 +37,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'devise'
+
+gem 'spree', '1.3.2'
+gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '1-3-stable'
+#gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '1-3-stable'
