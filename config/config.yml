@@ -2,6 +2,7 @@ defaults: &DEFAULTS
   login_url: http://localhost:3000/users/sign_in
   logout_url: http://localhost:3000/users/sign_out
   signup_url: http://localhost:3000/users/sign_up
+  api_auth_token: 'M9812Y125T-V234BCOV6-B7PGL23WM-S68CAS53FNGO2B-4JGNT-6RU'
 
 development:
   <<: *DEFAULTS
@@ -14,3 +15,4 @@ production:
   login_url: http://dev.pointgaming.net/users/sign_in
   logout_url: http://dev.pointgaming.net/users/sign_out
   signup_url: http://dev.pointgaming.net/users/sign_up
+  api_auth_token: '25ds-45p56q63-56b75s5m-ndma2fd86gkjo4n6-5124z5568-68f9s'
