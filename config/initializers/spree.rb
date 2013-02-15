@@ -16,3 +16,10 @@ Spree.user_class = "User"
 Rails.application.config.to_prepare do
   require_dependency 'spree/authentication_helpers'
 end
+
+SslRequirement.module_eval do
+  protected
+    def ssl_allowed?
+      true
+    end
+end
