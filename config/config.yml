@@ -12,7 +12,7 @@ test:
 
 production:
   <<: *DEFAULTS
-  login_url: http://dev.pointgaming.com/users/sign_in
-  logout_url: http://dev.pointgaming.com/users/sign_out
-  signup_url: http://dev.pointgaming.com/users/sign_up
+  login_url: https://dev.pointgaming.com/users/sign_in
+  logout_url: https://dev.pointgaming.com/users/sign_out
+  signup_url: https://dev.pointgaming.com/users/sign_up
   api_auth_token: '25ds-45p56q63-56b75s5m-ndma2fd86gkjo4n6-5124z5568-68f9s'
