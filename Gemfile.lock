@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/Andrewmp1/spree_bootstrap_theme.git
+  revision: f90bbc9d211a80150642626474261bcf924b30a3
+  specs:
+    spree_bootstrap_theme (0.1.0)
+      bootstrap-sass (~> 2.0.1)
+      spree_core
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -49,6 +57,7 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.0.4.2)
     builder (3.0.4)
     cancan (1.6.8)
     climate_control (0.0.3)
@@ -216,6 +225,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.3)
+      actionpack (>= 3.1)
+      execjs
+      railties (>= 3.1)
     tzinfo (0.3.35)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
@@ -240,4 +253,6 @@ DEPENDENCIES
   redis-rails
   sass-rails (~> 3.2.3)
   spree (= 1.3.2)
+  spree_bootstrap_theme!
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)

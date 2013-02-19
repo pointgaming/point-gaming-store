@@ -40,4 +40,8 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+gem 'twitter-bootstrap-rails'
+
 gem 'spree', '1.3.2'
+
+gem 'spree_bootstrap_theme', :git => 'git://github.com/Andrewmp1/spree_bootstrap_theme.git'

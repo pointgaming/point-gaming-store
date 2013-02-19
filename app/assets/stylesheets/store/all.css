@@ -4,9 +4,37 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *
 
- *= require store/spree_core
- *= require store/spree_promo
+ *= require bootstrap_and_overrides
+ *= require akira
 
  *= require_self
  *= require_tree .
 */
+#logo-container {
+  margin-bottom: 15px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+ul.filter_choices li {
+  padding: 3px 15px 3px 0;
+}
+ul.filter_choices label {
+  display: inline;
+}
+ul.filter_choices input[type="radio"], 
+ul.filter_choices input[type="checkbox"] {
+  margin: 0;
+}
+#products.thumbnails .thumbnail > a, 
+#products.thumbnails .thumbnail span {
+  display: block;
+  text-align: center;
+}
+#products.thumbnails .thumbnail p,
+#products.thumbnails .thumbnail h5 {
+  text-align: center;
+}
+#products.thumbnails .thumbnail {
+  height: 190px;
+}

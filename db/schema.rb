@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205234826) do
+ActiveRecord::Schema.define(:version => 20130215222325) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -616,6 +616,7 @@ ActiveRecord::Schema.define(:version => 20130205234826) do
     t.string   "spree_api_key",          :limit => 48
     t.integer  "ship_address_id"
     t.integer  "bill_address_id"
+    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
