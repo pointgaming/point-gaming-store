@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222023210) do
+ActiveRecord::Schema.define(:version => 20130307165205) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -618,6 +618,7 @@ ActiveRecord::Schema.define(:version => 20130222023210) do
     t.integer  "bill_address_id"
     t.string   "username"
     t.integer  "points"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
