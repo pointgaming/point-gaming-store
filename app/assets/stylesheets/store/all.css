@@ -6,7 +6,8 @@
 
  *= require bootstrap_and_overrides
  *= require akira
-
+ *= require pg_design
+ *= require ie
  *= require_self
  *= require_tree .
 */
@@ -37,4 +38,14 @@ ul.filter_choices input[type="checkbox"] {
 }
 #products.thumbnails .thumbnail {
   height: 190px;
+}
+
+.search-form input[type="text"] {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+#header, #wrapper {
+  overflow: visible;
 }

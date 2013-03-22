@@ -1,59 +1,51 @@
-<div class="container" id="logo-container">
-    <a class="brand" href="/">
-        <%= image_tag "logo.png", :alt => "Point Gaming" %>
-    </a>
-</div>
-
-<div class="navbar">
-    <div class="navbar-inner">
-        <div class="container">
-            <div class="nav-collapse">
-                <ul class="nav"> 
-                    <%= navItem "Home", "#{main_app_path}" %>
-                    <%= navItem "Games", "#{main_app_path}games" %>
-                    <%= navItem "Tournaments", "#{main_app_path}tournaments" %>
-                    <%= navItem "Streams", "#{main_app_path}streams" %>
-                    <%= navItem "Store", store_path, true %>
-                    <%= navItem "Forums", forum_path %>
+<header id="header">
+  <div class="header-holder">
+    <div class="header-frame">
+      <strong class="logo"><%= link_to "Point Gaming", root_path %></strong>
+      <% unless @hide_nav %>
+        <nav class="main-nav">
+          <ul>
+            <%= navItem "Home", "#{main_app_path}" %>
+            <%= navItem "Games", "#{main_app_path}games" %>
+            <%= navItem "Tournaments", "#{main_app_path}tournaments" %>
+            <%= navItem "Streams", "#{main_app_path}streams" %>
+            <%= navItem "Store", store_path, true %>
+            <%= navItem "Forums", forum_path %>
+          </ul>
+        </nav>
+        <%= form_tag products_url, :method => :get, :class => 'navbar-search search-form' do %>
+            <input placeholder="Search" type="text" name="keywords" class="search-query">
+            <input type="submit" value="submit">
+        <% end %>
+        <% if user_signed_in? %>
+          <ul class="pull-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= "#{current_user.username} (#{current_user.points})" %> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <%- cart_link = link_to_cart %>
+                  <% unless cart_link.blank? %>
+                    <li><%= link_to_cart %></li>
+                    <li class="divider"></li>
+                  <% end %>
+                  <% if current_user.admin? %>
+                    <li><%= link_to "Admin", "#{main_app_path}admin" %></li>
+                    <li class="divider"></li>
+                  <% end %>
+                  <li><%= link_to "Streams", "#{main_app_path}user_streams" %></li>
+                  <li><%= link_to "Teams", "#{main_app_path}teams" %></li>
+                  <li><%= link_to "Tournaments", "#" %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Profile", "#{main_app_path}users/#{pg_user_id}/profile/edit" %></li>
+                  <li><%= link_to "Settings", "#{main_app_path}settings" %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, :method=>'delete' %></li>
                 </ul>
-
-                <ul class="nav pull-right">
-                    <li>
-                        <%= form_tag products_url, :method => :get, :class => 'navbar-search pull-left' do %>
-                            <input type="search" id="s1" class="search-query span2" name="keywords" placeholder="Search">
-                        <% end %>
-                    </li>
-
-                    <% if user_signed_in? %>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= "#{current_user.username} (#{current_user.points})" %> <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                              <%- cart_link = link_to_cart %>
-                              <% unless cart_link.blank? %>
-                                <li><%= link_to_cart %></li>
-                                <li class="divider"></li>
-                              <% end %>
-                              <% if current_user.admin? %>
-                                <li><%= link_to "Admin", "#{main_app_path}admin" %></li>
-                                <li class="divider"></li>
-                              <% end %>
-                              <li><%= link_to "Streams", "#{main_app_path}user_streams" %></li>
-                              <li><%= link_to "Teams", "#{main_app_path}teams" %></li>
-                              <li><%= link_to "Tournaments", "#" %></li>
-                              <li class="divider"></li>
-                              <li><%= link_to "Profile", "#{main_app_path}users/#{pg_user_id}/profile/edit" %></li>
-                              <li><%= link_to "Settings", "#{main_app_path}settings" %></li>
-                              <li class="divider"></li>
-                              <li><%= link_to "Logout", destroy_user_session_path, :method=>'delete' %></li>
-                            </ul>
-                        </li>
-                    <% else %>
-                        <li>
-                            <%= link_to("Login", new_user_session_path) %>
-                        </li>
-                    <% end %>
-                </ul>
-            </div>
-        </div>
+            </li>
+          </ul>
+        <% else %>
+          <%= link_to("Login", new_user_session_path, :class => "login") %>
+        <% end %>
+      <% end %>
     </div>
-</div>
+  </div>
+</header>

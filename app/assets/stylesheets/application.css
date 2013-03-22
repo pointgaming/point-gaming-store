@@ -10,5 +10,17 @@
  *
  *= require bootstrap_and_overrides
  *= require_self
+ *= require pg_design
+ *= require ie
  *= require_tree .
  */
+
+.search-form input[type="text"] {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+#header, #wrapper {
+  overflow: visible;
+}

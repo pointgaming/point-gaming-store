@@ -1,30 +1,27 @@
 <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 
-  <div class="container">
+  <div id="wrapper">
     <%= render :partial => 'spree/shared/nav_bar' %>
 
-    <div class="row">
+    <div id="main">
       <% if content_for?(:sidebar) %>
-        <aside id="sidebar" class="span3" data-hook>
-          <%= yield :sidebar %>
-        </aside>
-      <% end %>
+        <div id="twocolumns">
+          <section id="content">
+            <%= breadcrumbs(@taxon) %>
+            <%= flash_messages %>
+            <%= yield %>
+          </section>
 
-      <div id="content" class="<% if !content_for?(:sidebar) %>span12<% else %>span9<% end %>" data-hook>
+          <aside id="sidebar" class="span3" data-hook>
+            <%= yield :sidebar %>
+          </aside>
+        </div>
+      <% else %>
         <%= breadcrumbs(@taxon) %>
         <%= flash_messages %>
         <%= yield %>
-      </div>
+      <% end %>
     </div>
-
-    <footer id="footer" data-hook>
-      <div class="row">
-        <div id="footer-left" class="span6" data-hook>
-          <p><%= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
-        </div>
-        <div id="footer-right" class="span6" data-hook></div>
-      </div>
-    </footer>
 
     <%= render :partial => 'spree/shared/google_analytics' %>
 
