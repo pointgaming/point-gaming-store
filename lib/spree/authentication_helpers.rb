@@ -6,6 +6,7 @@ module Spree
       receiver.send :helper_method, :spree_logout_path
       receiver.send :helper_method, :spree_current_user
       receiver.send :helper_method, :pg_user_id
+      receiver.send :helper_method, :current_pg_user
     end
 
     def spree_current_user
@@ -26,6 +27,12 @@ module Spree
 
     def pg_user_id
       session.has_key?('warden.user.user.key') ? session['warden.user.user.key'].at(1).first : nil
+    end
+
+    def current_pg_user
+      @PgUser ||= PgUser.find(pg_user_id)
+    rescue
+      nil
     end
   end
 end
