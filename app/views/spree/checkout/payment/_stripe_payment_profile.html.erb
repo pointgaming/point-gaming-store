@@ -1,0 +1,8 @@
+<% if current_pg_user.present? && current_pg_user.stripe_customer_token.present? %>
+<p class="field">
+  <label>
+    <input type="checkbox" name="use_payment_profile" value="1" data-hook="use-payment-profile" />
+    <span>Use credit card on file</span>
+  </label>
+</p>
+<% end %>
