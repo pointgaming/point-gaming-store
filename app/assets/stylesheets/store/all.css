@@ -68,3 +68,8 @@ ul.filter_choices input[type="checkbox"] {
 a:hover {
   color:#CE2027;
 }
+
+div.header-toolbar a:visited,
+div.header-toolbar a:hover {
+  color: #fff;
+}
