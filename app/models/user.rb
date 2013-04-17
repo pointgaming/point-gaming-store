@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  before_validation :populate_slug
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -17,4 +19,10 @@ class User < ActiveRecord::Base
   def store_admin?
     pg_user && pg_user.group && pg_user.group.permissions.include?('store_admin')
   end
+
+  def populate_slug
+    self.slug = self.username.downcase.gsub(/\s/, "_") if self.username.present?
+    true
+  end
+
 end
