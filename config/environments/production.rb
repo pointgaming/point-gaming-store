@@ -54,6 +54,8 @@ Pointgamingstore::Application.configure do
   # config.assets.precompile += %w( search.js )
   config.assets.precompile += %w( .svg .eot .woff .ttf )
 
+  config.action_mailer.default_url_options = { :host => 'store.pointgaming.com' }
+
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
@@ -70,4 +72,8 @@ Pointgamingstore::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.after_initialize do
+    Rails.application.routes.default_url_options = Rails.application.config.action_mailer.default_url_options
+  end
 end
