@@ -4,7 +4,7 @@ Spree::Product.class_eval do
   include Spree::Core::Engine.routes.url_helpers
 
   def url
-    product_path(self)
+    product_url(self)
   end
 
   def store_sort
