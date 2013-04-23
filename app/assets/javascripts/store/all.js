@@ -7,7 +7,9 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require bootstrap
+//= require twitter/bootstrap/bootstrap-dropdown
+//= require twitter/bootstrap/bootstrap-tooltip
+//= require twitter/bootstrap/bootstrap-popover
 
 //= require store/spree_core
 //= require store/spree_promo

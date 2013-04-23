@@ -46,7 +46,7 @@
           </ul>
         </nav>
         <div class="pull-right">
-          <%= form_tag "/search", :method => :get, :class => 'navbar-search search-form' do %>
+          <%= form_tag "/search", :method => :get, :class => 'navbar-search search-form', autocomplete: 'off' do %>
             <input placeholder="Search" type="text" name="query" class="search-query">
             <input type="submit" value="submit">
           <% end %>
