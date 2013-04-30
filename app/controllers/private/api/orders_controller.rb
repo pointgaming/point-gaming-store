@@ -1,4 +1,5 @@
 class Private::Api::OrdersController < Private::Api::BaseController
+  ssl_required :show
   before_filter :ensure_order, only: [:show]
 
   def show

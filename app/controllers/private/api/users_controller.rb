@@ -1,4 +1,6 @@
 class Private::Api::UsersController < Private::Api::BaseController
+  ssl_required :create, :update, :show, :destroy
+
   before_filter :authenticate_api!
   before_filter :ensure_params, only: [:create, :update]
   before_filter :ensure_user, only: [:update, :destroy]
@@ -40,12 +42,6 @@ class Private::Api::UsersController < Private::Api::BaseController
   end
 
 protected
-
-  def authenticate_api!
-    unless params[:api_token] && params[:api_token] === APP_CONFIG['api_auth_token']
-      render :json => {:success=>false, :message=>"Failed to authenticate with the api"}, :status=>401
-    end
-  end
 
   def ensure_params
     unless params[:user]
