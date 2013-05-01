@@ -5,6 +5,7 @@
  *
 
  *= require bootstrap_and_overrides
+ *= require ./bootstrap-modal
  *= require akira
  *= require pg_design
  *= require ie
