@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417233604) do
+ActiveRecord::Schema.define(:version => 20130504011151) do
+
+  create_table "site_settings", :force => true do |t|
+    t.string "key"
+    t.string "value"
+  end
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"

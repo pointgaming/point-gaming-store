@@ -4,6 +4,7 @@ Pointgamingstore::Application.routes.draw do
   namespace :private do
     namespace :api do
       resources :users, id: /[^\/]+?/, :format => /json|csv|xml|yaml/
+      resources :site_settings, id: /[^\/]+?/, :format => /json|csv|xml|yaml/
       resources :orders, only: [:show]
     end
   end
