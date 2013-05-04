@@ -27,12 +27,19 @@ namespace :deploy do
   namespace :assets do
     task :update_asset_mtimes do ; end
   end
+
+  desc "Symlink shared configs and folders on each release."
+  task :symlink_shared do
+    run "ln -s #{shared_path}/spree #{release_path}/public"
+  end
 end
 
 before 'deploy:update_code' do
   run "#{try_sudo} chown -R nobody:nogroup #{deploy_to}"
   run "#{try_sudo} /bin/chmod -R g+rw #{deploy_to}"
 end
+
+after 'deploy:finalize_update', 'deploy:symlink_shared'
 
 before 'deploy:restart' do
   run "#{try_sudo} chown -R nobody:nogroup #{deploy_to}"
