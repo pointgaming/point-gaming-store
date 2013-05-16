@@ -31,8 +31,7 @@ module Spree
 
     def current_pg_user
       return nil unless spree_current_user
-
-      @PgUser ||= PgUser.find(spree_current_user.slug)
+      @PgUser ||= PgUser.find(pg_user_id)
     rescue
       nil
     end

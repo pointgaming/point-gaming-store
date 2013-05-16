@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   def pg_user
-    @PgUser ||= PgUser.find(self.username)
+    @PgUser ||= PgUser.find(1, params: { slug: self.slug })
   rescue
     nil
   end
