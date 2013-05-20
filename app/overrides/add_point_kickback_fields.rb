@@ -34,3 +34,21 @@ Deface::Override.new(
   insert_bottom: '[data-hook=order_summary]',
   partial: 'spree/checkout/point_kickback_summary'
 )
+Deface::Override.new(
+  name: 'add_point_kickback_total_to_checkout_confirm_line_header',
+  virtual_path: 'spree/shared/_order_details',
+  insert_before: 'th.price',
+  partial: 'spree/shared/point_kickback_order_details_line_header'
+)
+Deface::Override.new(
+  name: 'add_point_kickback_total_to_checkout_confirm_line',
+  virtual_path: 'spree/shared/_order_details',
+  insert_before: '[data-hook=order_item_price]',
+  partial: 'spree/shared/point_kickback_order_details_line'
+)
+Deface::Override.new(
+  name: 'add_point_kickback_total_to_checkout_confirm_total',
+  virtual_path: 'spree/shared/_order_details',
+  insert_before: '[data-hook=order_details_total]',
+  partial: 'spree/shared/point_kickback_total_order_details'
+)

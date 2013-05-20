@@ -24,5 +24,4 @@ class User < ActiveRecord::Base
     self.slug = self.username.downcase.gsub(/\s/, "_") if self.username.present?
     true
   end
-
 end

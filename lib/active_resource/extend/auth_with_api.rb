@@ -10,6 +10,11 @@ module ActiveResource::Extend::AuthWithApi
     end
   end
 
+  def put_with_auth(action, options = {})
+    options.merge!({:api_token => self.class.api_key})
+    put_without_auth(action, options)
+  end
+
   def self.included(base)
     base.class_eval do
       extend ClassMethods
@@ -19,6 +24,7 @@ module ActiveResource::Extend::AuthWithApi
         alias_method_chain :collection_path, :auth
         attr_accessor :api_key
       end
+      alias_method_chain :put, :auth
     end
   end  
 end
