@@ -32,6 +32,7 @@ end
 
 gem 'jquery-rails'
 
+gem 'god', require: false
 gem 'capistrano'
 gem 'capistrano-ext'
 

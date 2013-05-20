@@ -108,6 +108,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffaker (1.12.1)
+    god (0.13.2)
     hashr (0.0.22)
     highline (1.6.11)
     hike (1.2.1)
@@ -319,6 +320,7 @@ DEPENDENCIES
   capistrano-ext
   coffee-rails (~> 3.2.1)
   devise
+  god
   jquery-rails
   meta_request
   pg
