@@ -1,0 +1,5 @@
+<%= f.field_container :point_kickback do %>
+  <%= f.label :point_kickback, t(:point_kickback) %> <span class="required">*</span><br />
+  <%= f.text_field :point_kickback, :class => 'fullwidth' %>
+  <%= f.error_message_on :point_kickback %>
+<% end %>

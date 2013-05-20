@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504011151) do
+ActiveRecord::Schema.define(:version => 20130520154310) do
 
   create_table "site_settings", :force => true do |t|
     t.string "key"
@@ -316,6 +316,7 @@ ActiveRecord::Schema.define(:version => 20130504011151) do
     t.datetime "created_at",                              :null => false
     t.datetime "updated_at",                              :null => false
     t.boolean  "on_demand",            :default => false
+    t.integer  "point_kickback"
   end
 
   add_index "spree_products", ["available_on"], :name => "index_spree_products_on_available_on"

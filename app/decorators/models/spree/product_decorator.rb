@@ -3,6 +3,10 @@ Spree::Product.class_eval do
   include Tire::Model::Callbacks
   include Spree::Core::Engine.routes.url_helpers
 
+  attr_accessible :point_kickback
+
+  validates :point_kickback, numericality: { only_integer: true }
+
   def url
     product_url(self)
   end
