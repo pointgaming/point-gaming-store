@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520154310) do
+ActiveRecord::Schema.define(:version => 20130520173505) do
 
   create_table "site_settings", :force => true do |t|
     t.string "key"
@@ -162,11 +162,12 @@ ActiveRecord::Schema.define(:version => 20130520154310) do
   create_table "spree_line_items", :force => true do |t|
     t.integer  "variant_id"
     t.integer  "order_id"
-    t.integer  "quantity",                                 :null => false
-    t.decimal  "price",      :precision => 8, :scale => 2, :null => false
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.integer  "quantity",                                     :null => false
+    t.decimal  "price",          :precision => 8, :scale => 2, :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.string   "currency"
+    t.integer  "point_kickback"
   end
 
   add_index "spree_line_items", ["order_id"], :name => "index_spree_line_items_on_order_id"
@@ -237,6 +238,7 @@ ActiveRecord::Schema.define(:version => 20130520154310) do
     t.datetime "updated_at",                                                                        :null => false
     t.string   "currency"
     t.string   "last_ip_address"
+    t.integer  "point_kickback_total"
   end
 
   add_index "spree_orders", ["number"], :name => "index_spree_orders_on_number"
