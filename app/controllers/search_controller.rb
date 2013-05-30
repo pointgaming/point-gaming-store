@@ -24,7 +24,7 @@ class SearchController < Spree::BaseController
       search.size search_size
     end
 
-    @results = @results.results
+    @results = @results.results.to_a
 
     respond_with(@results)
   end

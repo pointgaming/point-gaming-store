@@ -4,83 +4,9 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *
 
- *= require bootstrap_and_overrides
- *= require ./bootstrap-modal
- *= require akira
- *= require pg_design
- *= require ie
+ *= require store/spree_frontend
+
  *= require_self
  *= require_tree .
+ *= require store/spree_bootstrap
 */
-#logo-container {
-  margin-bottom: 15px;
-}
-.nowrap {
-  white-space: nowrap;
-}
-ul.filter_choices li {
-  padding: 3px 15px 3px 0;
-}
-ul.filter_choices label {
-  display: inline;
-}
-ul.filter_choices input[type="radio"], 
-ul.filter_choices input[type="checkbox"] {
-  margin: 0;
-}
-#products.thumbnails .thumbnail > a, 
-#products.thumbnails .thumbnail span {
-  display: block;
-  text-align: center;
-}
-#products.thumbnails .thumbnail p,
-#products.thumbnails .thumbnail h5 {
-  text-align: center;
-}
-#products.thumbnails .thumbnail {
-  height: 190px;
-}
-
-.search-form input[type="text"] {
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
-}
-
-#header, #wrapper {
-  overflow: visible;
-}
-
-.nav-list > .active > a,
-.nav-list > .active > a:hover {
-  background-color: #CE2027;
-}
-
-.dropdown-menu li.active > a,
-.dropdown-menu li.active > a:hover,
-.dropdown-menu li > a:hover,
-.dropdown-menu li > a:focus,
-.dropdown-submenu:hover > a {
-  background-color:#e9323d;
-  background-image: -moz-linear-gradient(top,#e9323d 0%,#ce2027 100%);
-  background-image: -webkit-gradient(linear,0 0,0 100%,from(#e9323d 0%),to(#ce2027 100%));
-  background-image: -webkit-linear-gradient(top,#e9323d 0%,#ce2027 100%);
-  background-image: -o-linear-gradient(top,#e9323d 0%,#ce2027 100%);
-  background-image: linear-gradient(to bottom,#e9323d 0%,#ce2027 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9323d', endColorstr='#ce2027',GradientType=0 );
-}
-
-a:hover {
-  color:#CE2027;
-}
-
-div.header-toolbar a:visited,
-div.header-toolbar a:hover,
-div.header-toolbar .dropdown-menu > li > a:hover {
-  color: #fff;
-}
-
-div.header-toolbar .dropdown-menu > li > a:visited {
-  color: #333;
-}

@@ -8,6 +8,7 @@
 //= require jquery_ujs
 //= require ./jquery.cookie
 
+//= require store/spree_frontend
 //= require twitter/bootstrap/bootstrap-dropdown
 //= require twitter/bootstrap/bootstrap-tooltip
 //= require twitter/bootstrap/bootstrap-popover
@@ -15,10 +16,8 @@
 //= require ./bootstrap-modal
 //= require ./bootstrap-modalmanager
 
-//= require store/spree_core
-//= require store/spree_promo
-
 //= require_tree .
 $(function(){
     new PointGaming.DesktopController();
 });
+//= require store/spree_bootstrap
