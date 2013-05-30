@@ -13,9 +13,9 @@
   </div>
 
   <div class="modal-footer">
-    <%= link_to t('.try_again', default: t("helpers.links.try_again")), '#', :class => 'btn pull-left desktop-client-required', 'data-action' => 'tryAgain' %>
-    <%= link_to t('.install', default: t("helpers.links.install")), "#{main_app_path}system/desktop_client/PointGamingDesktop.msi", :class => 'btn' %>
-    <%= link_to t('.cancel', default: t("helpers.links.cancel")), '#', :class => 'btn', 'data-dismiss' => 'modal' %>
+    <%= link_to Spree.t('try_again', default: Spree.t("helpers.links.try_again")), '#', :class => 'btn pull-left desktop-client-required', 'data-action' => 'tryAgain' %>
+    <%= link_to Spree.t('install', default: Spree.t("helpers.links.install")), "#{main_app_path}system/desktop_client/PointGamingDesktop.msi", :class => 'btn' %>
+    <%= link_to Spree.t('cancel', default: Spree.t("helpers.links.cancel")), '#', :class => 'btn', 'data-dismiss' => 'modal' %>
   </div>
 </div>
 
@@ -30,8 +30,8 @@
   </div>
 
   <div class="modal-footer">
-    <%= link_to t('.try_again', default: t("helpers.links.try_again")), '#', :class => 'btn pull-left desktop-client-required', 'data-action' => 'tryAgain' %>
-    <%= link_to t('.update', default: t("helpers.links.update")), "#{main_app_path}system/desktop_client/PointGamingDesktop.msp", :class => 'btn' %>
-    <%= link_to t('.cancel', default: t("helpers.links.cancel")), '#', :class => 'btn', 'data-dismiss' => 'modal' %>
+    <%= link_to Spree.t('try_again', default: Spree.t("helpers.links.try_again")), '#', :class => 'btn pull-left desktop-client-required', 'data-action' => 'tryAgain' %>
+    <%= link_to Spree.t('update', default: Spree.t("helpers.links.update")), "#{main_app_path}system/desktop_client/PointGamingDesktop.msp", :class => 'btn' %>
+    <%= link_to Spree.t('cancel', default: Spree.t("helpers.links.cancel")), '#', :class => 'btn', 'data-dismiss' => 'modal' %>
   </div>
 </div>
