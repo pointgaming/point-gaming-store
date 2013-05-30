@@ -1,5 +1,5 @@
 class Private::Api::BaseController < ActionController::Base
-  include ::SslRequirement
+  include ::Spree::Core::ControllerHelpers::SSL
   before_filter :authenticate_api!
 
   respond_to :json
