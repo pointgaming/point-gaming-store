@@ -1,58 +1,77 @@
 <%= render partial: 'spree/shared/desktop_client_helper' %>
-<header id="header">
-  <div class="header-toolbar container-fluid">
-    <ul class="pull-right">
-      <% if user_signed_in? %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= "#{current_user.username} (#{current_pg_user.try(:points)})" %> <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <%- cart_link = link_to_cart %>
-            <% unless cart_link.blank? %>
-              <li><%= link_to_cart %></li>
-              <li class="divider"></li>
-            <% end %>
-            <% if current_user.admin? %>
-              <li><%= link_to "Admin", "#{main_app_path}admin" %></li>
-              <li class="divider"></li>
-            <% end %>
-            <li><%= link_to "Streams", "#{main_app_path}user_streams" %></li>
-            <li><%= link_to "Teams", "#{main_app_path}teams" %></li>
-            <li><%= link_to "Tournaments", "#" %></li>
-            <li class="divider"></li>
-            <% if current_pg_user %>
-              <li><%= link_to "Profile", "#{main_app_path}u/#{current_pg_user.slug}/profile/edit" %></li>
-            <% end %>
-            <li><%= link_to "Settings", "#{main_app_path}settings" %></li>
-            <li class="divider"></li>
-            <li><%= link_to "Logout", destroy_user_session_path, :method=>'delete' %></li>
-          </ul>
-        </li>
-      <% else %>
-        <li><%= link_to("Login", new_user_session_path, :class => "") %></li>
-      <% end %>
-    </ul>
-  </div>
 
-  <div class="header-holder">
-    <div class="header-frame">
-      <strong class="logo"><%= link_to "Point Gaming", "/" %></strong>
-      <% unless @hide_nav %>
-        <nav class="main-nav">
-          <ul>
-            <%= navItem "Games", "#{main_app_path}games" %>
-            <%= navItem "Tournaments", "#{main_app_path}tournaments" %>
-            <%= navItem "Streams", "#{main_app_path}streams" %>
-            <%= navItem "Store", store_path, true %>
-            <%= navItem "Forums", forum_path %>
-          </ul>
-        </nav>
-        <div class="pull-right">
-          <%= form_tag "/search", :method => :get, :class => 'navbar-search search-form', autocomplete: 'off' do %>
-            <input placeholder="Search" type="text" name="query" class="search-query">
-            <input type="submit" value="submit">
-          <% end %>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container"> 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content --> 
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+      <div class="row">
+        <div class="span2"> 
+          <!-- Be sure to leave the brand out there if you want it shown --> 
+          <%= link_to image_tag('logo_full.png'), root_path, :class => 'brand' %>
         </div>
-      <% end %>
+            <% unless @hide_nav %>
+            <div class="span10"> 
+              <!-- Everything you want hidden at 940px or less, place within here -->
+              <div class="nav-collapse collapse navbar-responsive-collapse"> 
+                
+                <!-- .nav, .navbar-search, .navbar-form, etc -->
+                <ul class="nav primary span6">
+                  <%= navItem "Games", "#{main_app_path}games" %>
+                  <%= navItem "Tournaments", "#{main_app_path}tournaments" %>
+                  <%= navItem "Streams", "#{main_app_path}streams" %>
+                  <%= navItem "Store", store_path, true %>
+                  <%= navItem "Forums", forum_path %>
+                </ul>
+
+                <%= form_tag "/search", :method => :get, :class => 'navbar-search search-form span2', autocomplete: 'off' do %>
+                  <fieldset>
+                    <div class="input-append">
+                      <input class="span2" id="navbar-search-button" placeholder="Search" type="text" name="query">
+                      <button class="btn" type="submit" value="submit"><%= link_to image_tag('mag-glass.png') %></button>
+                    </div>
+                  </fieldset>
+                <% end %>
+
+                <ul class="nav admin span2 pull-right">
+                  <% if user_signed_in? %>
+                    <li class="dropdown"> 
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <%= "#{current_user.username}" %>
+                        <b class="caret"></b>
+                        <br>
+                        <%= "#{current_pg_user.try(:points)} points" %>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <%- cart_link = link_to_cart %>
+                        <% unless cart_link.blank? %>
+                          <li><%= link_to_cart %></li>
+                          <li class="divider"></li>
+                        <% end %>
+                        <% if current_user.admin? %>
+                          <li><%= link_to "Admin", "#{main_app_path}admin" %></li>
+                          <li class="divider"></li>
+                        <% end %>
+                        <li><%= link_to "Streams", "#{main_app_path}user_streams" %></li>
+                        <li><%= link_to "Teams", "#{main_app_path}teams" %></li>
+                        <li><%= link_to "Tournaments", "#" %></li>
+                        <li class="divider"></li>
+                        <% if current_pg_user %>
+                          <li><%= link_to "Profile", "#{main_app_path}u/#{current_pg_user.slug}/profile/edit" %></li>
+                        <% end %>
+                        <li><%= link_to "Settings", "#{main_app_path}settings" %></li>
+                        <li class="divider"></li>
+                        <li><%= link_to "Logout", destroy_user_session_path, :method=>'delete' %></li>
+                      </ul>
+                    </li>
+                  <% else %>
+                    <li><%= link_to("Login", new_user_session_path, :class => "") %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
-</header>
+</div>
