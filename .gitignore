@@ -16,6 +16,9 @@
 *.swp
 *.swo
 .DS_Store
+public/spree/*
+public/assets/*
+vendor/bundle/*
 
 # Ignore ruby version manager files
 .rvmrc
