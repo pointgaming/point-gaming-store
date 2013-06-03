@@ -1,0 +1,43 @@
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+<% if products.empty? %>
+  <%= Spree.t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <h6 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h6>
+<% end %>
+
+<% if products.any? %>
+<ul id="products" class="inline product-listing" data-hook>
+  <% products.each do |product| %>
+    <li id="product_<%= product.id %>" class="span3" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+
+      <div class="product-container">
+        <div class="product-image">
+          <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+        </div>
+          
+        <div class="price-container clearfix">
+          <span class="price selling span6" itemprop="price"><%= display_price(product) %></span>
+          <span class="span6"><a href="#" class="btn span12">Buy</a></span>
+        </div>
+        
+        <% if product.point_kickback.present? %>
+          <div class="alert alert-info">
+            Kickback <%= product.point_kickback %>
+          </div>
+        <% end %>
+      </div>
+
+
+
+    </li>
+  <% end %>
+  <% reset_cycle("classes") %>
+</ul>
+<% end %>
+
+<% if paginated_products.respond_to?(:num_pages) %>
+  <%= paginate paginated_products %>
+<% end %>

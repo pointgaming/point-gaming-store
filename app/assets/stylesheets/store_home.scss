@@ -1,0 +1,32 @@
+.widget { border: 1px solid $midGrey; background: $lightGrey; margin-top: 10px;
+	.widget-header {background: $darkGrey;
+		h3 {font-size: 14px; color: $lightGrey; margin: 0; line-height: 20px; padding: 10px;}
+	}
+	.widget-content {padding: 10px;
+		h3 {margin-top: 0;}
+		table {margin-bottom: 0;}
+	}
+
+}
+
+ul#products {
+	li {
+		.product-container { padding: 5px; @include border-radius(3px); border: 1px solid $midGrey; background: $white;
+			.price-container {background: $darkGrey; padding: 5px;
+				.price {font-weight: bold; color: $white; text-align: center; line-height: 30px;}
+			}
+			.product-image {
+				img {width: 100%}
+			}
+			.alert {margin: 0; @include border-radius(0); text-align: center; padding: 10px;}
+		}
+	}
+}
+
+ul.nav-stacked { margin-top: 10px;
+	li {
+		a { @include border-radius(0 !important); color: $white; font-weight: bold; background: $darkGrey; border: 1px solid #666 !important;
+			&:hover {background: #666;}
+		}
+	}
+}

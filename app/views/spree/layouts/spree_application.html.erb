@@ -12,7 +12,6 @@
 
     <div class="wrapper">
       <%= render :partial => 'spree/shared/nav_bar' %>
-    <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
     </div>
 
       <div id="main" class="container" data-hook>
@@ -20,7 +19,7 @@
 
         <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
 
-        <div id="content" class="span<%= !content_for?(:sidebar) ? "12" : "8" %>" data-hook>
+        <div id="content" data-hook>
           <%= flash_messages %>
           <%= yield %>
         </div>

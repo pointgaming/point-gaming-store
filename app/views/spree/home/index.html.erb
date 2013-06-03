@@ -1,0 +1,48 @@
+<div class="row-fluid">
+	<div class="span3">
+		<div class="widget">
+		  <div class="widget-header">
+		    <h3>Featured Item</h3>
+		  </div>
+		  <div class="widget-content clearfix">
+
+		  </div>
+		</div>
+
+		<ul class="nav nav-tabs nav-stacked">
+		  <li><a href="#">Popular</a></li>
+		  <li><a href="#">Hardware</a></li>
+		  <li><a href="#">Accessories</a></li>
+		  <li><a href="#">Clothing</a></li>
+		</ul>
+
+	</div>
+	<div class="span9">
+		<div class="widget">
+		  <div class="widget-header">
+		    <h3>Send me something for points</h3>
+		  </div>
+		  <div class="widget-content clearfix">
+
+		  </div>
+		</div>
+
+		<div class="widget">
+		  <div class="widget-header">
+		    <h3>Popular items</h3>
+		  </div>
+		  <div class="widget-content clearfix">
+		  	<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+		  </div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
