@@ -5,7 +5,6 @@ module Spree
       receiver.send :helper_method, :spree_signup_path
       receiver.send :helper_method, :spree_logout_path
       receiver.send :helper_method, :spree_current_user
-      receiver.send :helper_method, :pg_user_id
       receiver.send :helper_method, :current_pg_user
     end
 
@@ -25,15 +24,9 @@ module Spree
       APP_CONFIG['logout_url']
     end
 
-    def pg_user_id
-      session.has_key?('warden.user.user.key') ? session['warden.user.user.key'].at(1).first : nil
-    end
-
     def current_pg_user
-      return nil unless spree_current_user
-      @PgUser ||= PgUser.find(pg_user_id)
-    rescue
-      nil
+      return nil unless spree_current_user.present?
+      spree_current_user.pg_user
     end
   end
 end
