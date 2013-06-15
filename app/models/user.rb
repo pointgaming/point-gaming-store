@@ -16,8 +16,12 @@ class User < ActiveRecord::Base
     nil
   end
 
+  def has_permission?(permission_name)
+    pg_user && pg_user.group && pg_user.group.permissions.include?(permission_name)
+  end
+
   def store_admin?
-    pg_user && pg_user.group && pg_user.group.permissions.include?('store_admin')
+    has_permission?('store_admin')
   end
 
   def populate_slug
