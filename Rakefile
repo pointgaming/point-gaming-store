@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Pointgamingstore::Application.load_tasks
+PointGamingStore::Application.load_tasks
