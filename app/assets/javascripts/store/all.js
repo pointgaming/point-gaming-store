@@ -4,20 +4,15 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require jquery
-//= require jquery_ujs
-//= require ./jquery.cookie
 
+//= require point_gaming_frontend
 //= require store/spree_frontend
-//= require twitter/bootstrap/bootstrap-dropdown
 //= require twitter/bootstrap/bootstrap-tooltip
 //= require twitter/bootstrap/bootstrap-popover
-//= require ./bootstrap-typeahead
-//= require ./bootstrap-modal
-//= require ./bootstrap-modalmanager
 
 //= require_tree .
 $(function(){
     new PointGaming.DesktopController();
+    new PointGaming.ToolbarController();
 });
 //= require store/spree_bootstrap

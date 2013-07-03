@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :admin
   # attr_accessible :title, :body
 
+  delegate :points, :to => :pg_user
+
   def pg_user
     @PgUser ||= PgUser.find(1, params: { slug: self.slug })
   rescue

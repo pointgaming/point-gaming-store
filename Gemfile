@@ -44,3 +44,5 @@ gem 'twitter-bootstrap-rails'
 gem 'spree', '2.0.0'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git'
 gem 'spree_bootstrap', github: 'jdutil/spree_bootstrap'
+
+gem "point_gaming_frontend", git: "git@github.com:pointgaming/point-gaming-frontend.git", branch: 'master'
