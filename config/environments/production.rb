@@ -51,7 +51,7 @@ PointGamingStore::Application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( pg_start.js )
   config.assets.precompile += %w( .svg .eot .woff .ttf )
 
   config.action_mailer.default_url_options = { :host => 'store.pointgaming.com' }

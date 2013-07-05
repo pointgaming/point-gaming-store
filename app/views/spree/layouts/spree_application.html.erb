@@ -29,6 +29,9 @@
     <%= render :partial => 'spree/shared/footer' %>
 
     <%= render :partial => 'spree/shared/google_analytics' %>
+
+    <%= javascript_include_tag 'store/all' %>
+    <%= javascript_include_tag 'pg_start' %>
     <script>
       Spree.api_key = <%= raw(try_spree_current_user.try(:spree_api_key).to_s.inspect) %>;
     </script>
