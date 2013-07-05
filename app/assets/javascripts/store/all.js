@@ -9,10 +9,9 @@
 //= require store/spree_frontend
 //= require twitter/bootstrap/bootstrap-tooltip
 //= require twitter/bootstrap/bootstrap-popover
-
 //= require_tree .
+
 $(function(){
     new PointGaming.DesktopController();
     new PointGaming.ToolbarController();
 });
-//= require store/spree_bootstrap
