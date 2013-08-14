@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '~> 3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -41,7 +41,7 @@ gem 'devise'
 
 gem 'twitter-bootstrap-rails'
 
-gem 'spree', '2.0.0'
+gem 'spree', '~> 2.0.3'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git'
 gem 'spree_bootstrap', github: 'jdutil/spree_bootstrap'
 
