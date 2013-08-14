@@ -10,9 +10,10 @@ class PgUser < ActiveResource::Base
     _id
   end
 
-  def increment_points!(amount)
-    raise TypeError, "Amount must be a Fixnum." unless amount.class.name === 'Fixnum'
-
-    put(:increment_points, {points: amount})
+  def increment_points_for_order!(order)
+    put(:increment_points_for_spree_order, {
+      order_id: order.id,
+      points: order.point_kickback_total
+    })
   end
 end
