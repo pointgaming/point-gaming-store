@@ -1,13 +1,14 @@
-class PgUser < ActiveResource::Base
+class Order < ActiveResource::Base
   include ActiveResource::Extend::AuthWithApi
 
   self.site = APP_CONFIG['main_app_api_url']
-  self.element_name = 'user'
+  self.element_name = 'order'
 
   self.api_key = APP_CONFIG['api_auth_token']
 
-  def id
-    _id
+  def log!(pg_user)
+    put(:log, {
+      slug: pg_user.slug
+    })
   end
-
 end

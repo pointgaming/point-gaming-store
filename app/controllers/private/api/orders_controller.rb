@@ -3,7 +3,7 @@ class Private::Api::OrdersController < Private::Api::BaseController
   before_filter :ensure_order, only: [:show]
 
   def show
-    respond_with(@order.as_json({ methods: [:item_count] }))
+    respond_with(@order.as_json({ methods: [:item_count, :products] }))
   end
 
 private
