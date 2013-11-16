@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def has_permission?(permission_name)
-    pg_user && pg_user.group && pg_user.group.permissions.include?(permission_name)
+    pg_user && pg_user.respond_to?(:group) && pg_user.group.permissions.include?(permission_name)
   end
 
   def store_admin?
